@@ -47,7 +47,7 @@ services:
     profiles:
       - donotstart
     volumes:
-      - ./example/integration/data/reference/:/plugins/example/integration/data/reference/
+      - ./integration/data/reference/:/plugins/example/integration/data/reference/
 
 volumes:
   tenzir-node:

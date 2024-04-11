@@ -15,5 +15,5 @@ teardown() {
 }
 
 @test "Check plugin availability" {
-  check tenzir 'show plugins | where name == "example"'
+  check tenzir 'show plugins | where name == "example" | drop version, kind'
 }

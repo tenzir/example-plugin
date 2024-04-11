@@ -1,0 +1,7 @@
+.DS_Store
+/.git/
+/Dockerfile
+/LICENSE
+/README.md
+/docker-compose.yaml
+/integration/data/reference/
