@@ -33,5 +33,5 @@ jobs:
           docker compose build --build-arg TENZIR_VERSION=${{ matrix.version }}
       - name: Test
         run: |
-          docker compose run tests
+          docker compose run --build tests
           git diff --exit-code
