@@ -7,8 +7,9 @@ This is an example plugin for Tenzir.
 Simply run `docker compose up` to build and start a Tenzir node with your
 additional plugin.
 
-Use `docker compose run tenzir '<pipeline>'` to interact with the node. Set the
-following environment variables and to connect your node to app.tenzir.com:
+Use `docker compose run tenzir '<pipeline>'` to interact with the node on the
+command-line, or set the following environment variables connect your node to
+app.tenzir.com:
 
 ```
 export TENZIR_PLUGINS__PLATFORM__API_KEY='<api-key>'
