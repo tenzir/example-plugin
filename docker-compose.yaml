@@ -2,6 +2,8 @@ services:
   tenzir-node:
     build:
       context: .
+      args:
+        - TENZIR_VERSION=main
     environment:
       - TENZIR_ALLOW_UNSAFE_PIPELINES=true
       - TENZIR_ENDPOINT=tenzir-node:5158
@@ -24,6 +26,8 @@ services:
   tenzir:
     build:
       context: .
+      args:
+        - TENZIR_VERSION=main
     profiles:
       - donotstart
     depends_on:
@@ -38,6 +42,8 @@ services:
     build:
       context: .
       target: example-test
+      args:
+        - TENZIR_VERSION=main
     profiles:
       - donotstart
     volumes:
