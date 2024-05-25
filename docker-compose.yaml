@@ -41,7 +41,7 @@ services:
   tests:
     build:
       context: .
-      target: example-test
+      target: test
       args:
         - TENZIR_VERSION=main
     profiles:

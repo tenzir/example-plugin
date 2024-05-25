@@ -1,20 +1,18 @@
 ARG TENZIR_VERSION=main
-FROM ghcr.io/tenzir/tenzir-dev:${TENZIR_VERSION} AS example-builder
+FROM ghcr.io/tenzir/tenzir-dev:${TENZIR_VERSION} AS builder
 
-COPY . /plugins/example/
+COPY . /tmp/trim/
 
-RUN cmake -S /plugins/example -B build-example -G Ninja -D CMAKE_INSTALL_PREFIX:STRING="$PREFIX"
-RUN cmake --build build-example --parallel
-RUN cmake --install build-example --strip --component Runtime --prefix /plugin/example
+RUN cmake -S /tmp/trim -B /tmp/trim/build -G Ninja -D CMAKE_INSTALL_PREFIX:STRING="$PREFIX"
+RUN cmake --build /tmp/trim/build --parallel
+RUN cmake --install /tmp/trim/build --strip --component Runtime --prefix /opt/tenzir/plugin/trim
 
-FROM example-builder AS example-test
+FROM builder AS test
 
 ENV BATS_LIB_PATH=/tmp/tenzir/tenzir/integration/lib
-# TODO: Use the update-integration target instead
-ENV UPDATE=1
 
-ENTRYPOINT cmake --build build-example --target integration
+ENTRYPOINT cmake --build /tmp/trim/build --target update-integration
 
 FROM ghcr.io/tenzir/tenzir:${TENZIR_VERSION}
 
-COPY --from=example-builder --chown=tenzir:tenzir /plugin/example /opt/tenzir
+COPY --from=builder --chown=tenzir:tenzir /opt/tenzir/plugin/trim /opt/tenzir/plugin/trim

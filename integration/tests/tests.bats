@@ -6,7 +6,7 @@ setup() {
   bats_load_library bats-tenzir
 
   export_default_node_config
-  export TENZIR_PLUGINS="example"
+  export TENZIR_PLUGINS="trim"
   setup_node
 }
 
@@ -14,6 +14,12 @@ teardown() {
   teardown_node
 }
 
-@test "Check plugin availability" {
-  check tenzir 'show plugins | where name == "example" | drop version, kind'
+@test "trim strings" {
+  check tenzir 'version | put foo=" foo   " | trim foo'
+  check tenzir 'version | put foo=" foo   ", bar="   bar" | trim foo'
+  check tenzir 'version | put foo=" foo   ", bar="   bar" | trim :string'
+}
+
+@test "trimming non-string fields fails" {
+  check ! tenzir 'version | trim :uint64'
 }

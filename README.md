@@ -1,6 +1,7 @@
 # Tenzir Example Plugin
 
-This is an example plugin for Tenzir.
+This is an example plugin for Tenzir, adding a `trim` operaotr that removes
+whitespace from string fields.
 
 ## Build and run
 
@@ -36,7 +37,10 @@ reference files automatically.
 
 If you want to upstream your plugin so that it is bundled with every Tenzir
 installation, open a PR that adds it to the [`plugins/` directory in the
-`tenzir/tenzir` repository][plugins-source].
+`tenzir/tenzir` repository][plugins-source]. If your  plugin has no
+dependencies, consider contributing it as a builtin instead. Builtins are
+located in the [`libtenzir/builtins/` directory in the `tenzir/tenzir`
+repositorsbuiltins-source].
 
 [plugins-source]: https://github.com/tenzir/tenzir/tree/main/plugins
 [builtins-source]: https://github.com/tenzir/tenzir/tree/main/libtenzir/builtins
