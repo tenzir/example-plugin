@@ -40,7 +40,7 @@ installation, open a PR that adds it to the [`plugins/` directory in the
 `tenzir/tenzir` repository][plugins-source]. If your  plugin has no
 dependencies, consider contributing it as a builtin instead. Builtins are
 located in the [`libtenzir/builtins/` directory in the `tenzir/tenzir`
-repositorsbuiltins-source].
+repository][builtins-source].
 
 [plugins-source]: https://github.com/tenzir/tenzir/tree/main/plugins
 [builtins-source]: https://github.com/tenzir/tenzir/tree/main/libtenzir/builtins
