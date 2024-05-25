@@ -23,8 +23,17 @@ jobs:
       fail-fast: false
       matrix:
         version:
+          # We always test against the the current development version and the
+          # latest stable release.
           - main
           - latest
+          # If you'd like to test with further Tenzir versions or rely on a
+          # specific Tenzir version in your deployment, you can also test
+          # against it by specifying the version number explicitly:
+          # - v4.14.0
+          # - v4.13.1
+          # - v4.12.2
+          # - v4.11.2
     steps:
       - name: Checkout
         uses: actions/checkout@v4
