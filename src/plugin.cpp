@@ -20,10 +20,11 @@ public:
     : field_{std::move(field)} {
   }
 
-  // This function contains the logic of the trim operator when
-  // instantiated. It maps from a generator :53
-  // of table slices to a generator of
-  // table slices. A table slice is simply a batch of events.
+  // This function contains the logic of the trim operator when instantiated.
+  // It maps from a generator of table slices to a generator of table slices. A
+  // table slice is simply a batch of events. The operator control plane is an
+  // escape hatch from the operator, utilized for emitting diagnostics or
+  // running asynchronous code outside of the operator's generator.
   auto operator()(generator<table_slice> input,
                   operator_control_plane& ctrl) const
       -> generator<table_slice> {
