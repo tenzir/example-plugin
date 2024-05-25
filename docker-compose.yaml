@@ -5,7 +5,6 @@ services:
       args:
         - TENZIR_VERSION=main
     environment:
-      - TENZIR_ALLOW_UNSAFE_PIPELINES=true
       - TENZIR_ENDPOINT=tenzir-node:5158
       - TENZIR_PLUGINS__PLATFORM__API_KEY=${TENZIR_PLUGINS__PLATFORM__API_KEY:-}
       - TENZIR_PLUGINS__PLATFORM__CONTROL_ENDPOINT=${TENZIR_PLUGINS__PLATFORM__CONTROL_ENDPOINT:-wss://ws.tenzir.app/production}
@@ -33,7 +32,6 @@ services:
     depends_on:
       - tenzir-node
     environment:
-      - TENZIR_ALLOW_UNSAFE_PIPELINES=true
       - TENZIR_ENDPOINT=tenzir-node:5158
     volumes:
       - tenzir-node:/var/cache/tenzir/
