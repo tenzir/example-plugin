@@ -1,7 +1,7 @@
 # Tenzir Example Plugin
 
-This is an example plugin for Tenzir, adding a `trim` operaotr that removes
-whitespace from string fields.
+This is an example plugin for Tenzir, adding a `read_custom_log` operator that
+parses a custom line-based log format.
 
 ## Build and run
 
@@ -37,7 +37,7 @@ reference files automatically.
 
 If you want to upstream your plugin so that it is bundled with every Tenzir
 installation, open a PR that adds it to the [`plugins/` directory in the
-`tenzir/tenzir` repository][plugins-source]. If your  plugin has no
+`tenzir/tenzir` repository][plugins-source]. If your plugin has no
 dependencies, consider contributing it as a builtin instead. Builtins are
 located in the [`libtenzir/builtins/` directory in the `tenzir/tenzir`
 repository][builtins-source].

@@ -1,0 +1,5 @@
+[2025-01-07T17:00:00] [INFO] [user123] [CREATE_POST] - User created a new blog post titled "Understanding AI".
+[2025-01-07T17:05:00] [INFO] [user123] [EDIT_POST] - User edited the blog post "Understanding AI".
+[2025-01-07T17:10:00] [INFO] [user456] [COMMENT] - User commented on "Understanding AI": "Great insights!".
+[2025-01-07T17:15:00] [ERROR] [user123] [DELETE_POST] - User attempted to delete a post that does not exist.
+[2025-01-07T17:20:00] [INFO] [user789] [LIKE] - User liked the blog post "Understanding AI".

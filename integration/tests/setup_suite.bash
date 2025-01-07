@@ -4,3 +4,5 @@ setup_suite() {
 
   export_default_paths
 }
+
+export BATS_LIB_PATH=${BATS_LIB_PATH:+${BATS_LIB_PATH}:}/tmp/tenzir/tenzir/integration/lib
