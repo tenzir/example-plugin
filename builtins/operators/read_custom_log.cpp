@@ -103,7 +103,12 @@ public:
   // generator of monostate denotes that an operator is a sink.
   //
   // The operator control plane is an escape hatch that allows operators to
-  // interact with whatever resides outside of the passed in or generated data.
+  // interact with whatever resides outside of the *data plane*. The input
+  // stream, the operators dynamic state and the output stream are considered
+  // the data plane. The operator control plane on the other hand contains
+  // things related to workings of Tenzir. Most importantly, the operator
+  // control plane provides access to a diagnostic handler, which can be used to
+  // emit diagnostics.
   //
   // In this case, we're reading a custom line-based log format, so we'll be
   // taking in bytes and returning events.
@@ -272,14 +277,14 @@ public:
     // Using `named_optional`, we add our argument. You can also use the
     // `positional` and/or `named`. See `argument_parser2.hpp`. If you dont need
     // any arguments, you can skip this part.
-    auto time_offset = tenzir::duration{0s};
-    parser.named_optional("time_offset", time_offset);
+    auto time_offset = std::optional<tenzir::duration>{0s};
+    parser.named("time_offset", time_offset);
     // We let the argument_parser parse our arguments. The TRY macro ensures
     // that a parsing failure will stop the setup.
     TRY(parser.parse(inv, ctx));
     // Create the operator instance, passing in any arguments that the operator
     // requires.
-    return std::make_unique<read_custom_log_operator>(time_offset);
+    return std::make_unique<read_custom_log_operator>(*time_offset);
   }
 };
 

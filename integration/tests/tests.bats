@@ -19,3 +19,8 @@ teardown() {
   cat "${BATS_TENZIR_INPUTSDIR}/sample.log" |
     check tenzir 'read_custom_log'
 }
+
+@test "parse example logs with argument" {
+  cat "${BATS_TENZIR_INPUTSDIR}/sample.log" |
+    check tenzir 'read_custom_log time_offset=1h'
+}
