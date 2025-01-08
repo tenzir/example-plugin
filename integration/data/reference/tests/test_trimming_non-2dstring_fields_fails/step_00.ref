@@ -1,6 +1,0 @@
-error: NotImplemented: Function 'utf8_trim' has no kernel matching input types (uint64)
- --> <input>:1:16
-  |
-1 | version | trim :uint64
-  |                ^^^^^^^ 
-  |

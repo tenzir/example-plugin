@@ -6,7 +6,8 @@ setup() {
   bats_load_library bats-tenzir
 
   export_default_node_config
-  export TENZIR_PLUGINS="trim"
+  export TENZIR_PLUGINS="example"
+  export TENZIR_TQL2=true
   setup_node
 }
 
@@ -14,12 +15,12 @@ teardown() {
   teardown_node
 }
 
-@test "trim strings" {
-  check tenzir 'version | put foo=" foo   " | trim foo'
-  check tenzir 'version | put foo=" foo   ", bar="   bar" | trim foo'
-  check tenzir 'version | put foo=" foo   ", bar="   bar" | trim :string'
+@test "parse example logs" {
+  cat "${BATS_TENZIR_INPUTSDIR}/sample.log" |
+    check tenzir 'read_custom_log'
 }
 
-@test "trimming non-string fields fails" {
-  check ! tenzir 'version | trim :uint64'
+@test "parse example logs with argument" {
+  cat "${BATS_TENZIR_INPUTSDIR}/sample.log" |
+    check tenzir 'read_custom_log time_offset=1h'
 }
