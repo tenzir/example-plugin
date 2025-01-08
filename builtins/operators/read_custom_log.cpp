@@ -85,7 +85,7 @@ public:
   friend auto inspect(auto& f, read_custom_log_operator& x) -> bool {
     return f.object(x).fields(
       f.field("time_offset", x.time_offset_)
-      /// If there were further members, they _must_ be added here.
+      // If there were further members, they _must_ be added here.
     );
   }
 

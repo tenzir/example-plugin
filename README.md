@@ -1,8 +1,12 @@
 # Tenzir Example Plugin
 
-We think that learning how to build a plugin is best done by example. This example plugin implements a simple operator `read_custom_log` that parses a [custom line-based log format](integration/data/inputs/sample.log).
+We think that learning how to build a plugin is best done by example. This
+example plugin implements a simple operator `read_custom_log` that parses a
+[custom line-based log format](integration/data/inputs/sample.log).
 
-The operators C++ implementation can be found in [`builtins/operators/read_custom_log.cpp`](builtins/operators/read_custom_log.cpp) and is extensively commented.
+The operators C++ implementation can be found in
+[`builtins/operators/read_custom_log.cpp`](builtins/operators/read_custom_log.cpp)
+and is extensively commented.
 
 ## Build and run
 
