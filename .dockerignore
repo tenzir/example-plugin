@@ -4,4 +4,4 @@
 /LICENSE
 /README.md
 /docker-compose.yaml
-/integration/data/reference/
+/bats/data/reference/
