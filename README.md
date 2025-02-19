@@ -18,8 +18,11 @@ on the command-line, or set the following environment variables connect your
 node to [app.tenzir.com](app):
 
 ```bash
-export TENZIR_PLUGINS__PLATFORM__API_KEY='<api-key>'
-export TENZIR_PLUGINS__PLATFORM__TENANT_ID='<tenant-id>'
+export TENZIR_TOKEN='<token>'
+
+# This one is only necessary if you're using a self-hosted version of the
+# Tenzir Platform.
+export TENZIR_PLATFORM_CONTROL_ENDPOINT='<url>'
 ```
 
 ## Run tests
