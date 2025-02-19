@@ -1,0 +1,5 @@
+{"timestamp": "2025-01-07T18:00:00Z", "log_level": "INFO", "user_id": "user123", "action_type": "CREATE_POST", "message": "User created a new blog post titled \"Understanding AI\"."}
+{"timestamp": "2025-01-07T18:05:00Z", "log_level": "INFO", "user_id": "user123", "action_type": "EDIT_POST", "message": "User edited the blog post \"Understanding AI\"."}
+{"timestamp": "2025-01-07T18:10:00Z", "log_level": "INFO", "user_id": "user456", "action_type": "COMMENT", "message": "User commented on \"Understanding AI\": \"Great insights!\"."}
+{"timestamp": "2025-01-07T18:15:00Z", "log_level": "ERROR", "user_id": "user123", "action_type": "DELETE_POST", "message": "User attempted to delete a post that does not exist."}
+{"timestamp": "2025-01-07T18:20:00Z", "log_level": "INFO", "user_id": "user789", "action_type": "LIKE", "message": "User liked the blog post \"Understanding AI\"."}

@@ -9,7 +9,7 @@ RUN cmake --install /tmp/example/build --strip --component Runtime --prefix /tmp
 
 FROM builder AS test
 
-ENTRYPOINT cmake --build /tmp/example/build --target update-integration
+ENTRYPOINT cmake --build /tmp/example/build --target update-bats
 
 FROM ghcr.io/tenzir/tenzir:${TENZIR_VERSION}
 
